@@ -95,6 +95,7 @@
     </form>
     <hr>
 
+    <!-- Drop Down start -->
     <div class="wrapper">
         <div x-data="{show:false}" style="float: left;">
             <div>
@@ -116,7 +117,43 @@
             </div>
         </div>
     </div>
+    <!-- Drop Down ends -->
 
+    <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+    <div>
+        <button x-data @click="alert('I\'ve been clicked!')">Click Me</button>
+        <button x-data @click="alert('Clicked')" >Click</button>
+    </div>
+    
+    <hr>
 
+    <form 
+    
+    x-data="{
+        plan:[],
+        Plan()
+        {
+            console.log(this.plan);
+        },
+    
+        }" @submit.prevent ="Plan">
+        <label for="Basic">Basic</label>
+        <input type="checkbox" id="Basic" value="Basic" x-model="plan">
+
+        <label for="Miduam">Miduam</label>
+        <input type="checkbox" id="Miduam" value="Miduam" x-model="plan">
+
+        <label for="Higher">Higher</label>
+        <input type="checkbox" id="Higher" value="Higher" x-model="plan">
+        
+        <div>
+            <span x-text="plan"></span>
+        </div>
+        <button type="submit">Submit</button>
+    </form>
+    <hr>
+    <div x-data="{ label: 'Hello' }" x-effect="console.log(label)">
+        <button @click="label += ' World!'">Change Message</button>
+    </div>
 </body>
 </html>
